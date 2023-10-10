@@ -5,38 +5,96 @@
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+body{
+  margin:0px;
+  background-image:url(/images/football-yards-2021-08-26-15-42-31-utc.jpg);
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:center center;
+  min-height:100vh;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.dashboard-header{
+  background-color:#333333;
+  margin:0px;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+h1,p,span{
+  font-family: 'Roboto Slab', serif;
+}
+.dashboard-header h1{
+  text-align:center;
+  color:white;
+  margin:0px;
+  padding:10px;
+  box-shadow:0px 2px 6px #333333;
+}
+.games-list{
+  
+  right:0;
+  padding:0px;
+}
+.games-list li{
+background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(243,243,243,1) 52%, rgba(230,230,230,1) 100%);
+border-radius:20px;
+padding:20px;
+margin:0;
+text-align: center;
+box-shadow:0 0 10px ghostwhite;
+margin-bottom:20px;
+text-align:center;
+color:black;
+display:flex;
+align-items:center;
+justify-content:space-evenly;
+}
+.date-time p{
+  color:black;
+  text-align: center;
+  font-size:25px;
+  padding:20px;
+}
+li::marker{
+  display:none;
+  color:transparent;
+}
+.game-container{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items:center;
+  justify-items:center;
+  margin-bottom:10px;
+}
+.game-container img{
+  width:40px;
+  
+}
+.time-of-game{
+  margin:auto;
+  background-color:mintcream;
+  padding:10px;
+  border-radius:5px;
+  box-shadow:0 0 2px grey;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.the-games{
+  width:92%;
+  margin:auto;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.date-time{
+  width:92%;
+  margin:auto;
+  background-color:white;
+  border-radius:20px;
+  box-shadow:0 0 10px ghostwhite;
 }
-
-.card {
-  padding: 2em;
+.scores-time{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items:center;
 }
-
-.read-the-docs {
-  color: #888;
+.live-score{
+  padding:8px;
+  background-color:white;
+  border-radius:5px;
+  border:1px solid grey;
+  box-shadow:0 0 2px #333333;
 }
