@@ -1,13 +1,24 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  
   text-align: center;
 }
-
+.MuiContainer-root{
+  background-image:url("./assets/background.jpg");
+  background-position:center center;
+  background-size:contain;
+  min-height:100vh;
+  padding:0;
+}
+.MuiInputBase-root{
+  background-color:white;
+}
+.MuiFormControl-root{
+  margin-top:20px !important;
+}
 body{
   margin:0px;
-  background-image:url(/images/football-yards-2021-08-26-15-42-31-utc.jpg);
   background-size:cover;
   background-repeat:no-repeat;
   background-position:center center;
@@ -17,9 +28,7 @@ body{
   background-color:#333333;
   margin:0px;
 }
-h1,p,span{
-  font-family: 'Roboto Slab', serif;
-}
+
 .dashboard-header h1{
   text-align:center;
   color:white;
@@ -30,7 +39,21 @@ h1,p,span{
 .games-list{
   
   right:0;
-  padding:0px;
+  padding:25px;
+}
+.home-team span,.away-team span{
+  font-size:20px;
+  padding:5px;
+  background-color:aquamarine;
+  border-radius:10px;
+  margin-bottom:5px;
+}
+.home-team,.away-team{
+  display:flex;
+  flex-direction:column;
+  justify-content: space-between;
+  align-items: center;
+
 }
 .games-list li{
 background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(243,243,243,1) 52%, rgba(230,230,230,1) 100%);
@@ -42,10 +65,30 @@ box-shadow:0 0 10px ghostwhite;
 margin-bottom:20px;
 text-align:center;
 color:black;
-display:flex;
+
 align-items:center;
 justify-content:space-evenly;
 }
+.teams{
+  width:100%;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:10px;
+
+}
+.home-team,.away-team{
+  background-color:white;
+  border-radius:10px;
+
+}
+.home-team img{
+  width:50px;
+
+}
+.away-team img{
+  width:50px;
+}
+
 .date-time p{
   color:black;
   text-align: center;
@@ -56,17 +99,7 @@ li::marker{
   display:none;
   color:transparent;
 }
-.game-container{
-  display:grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  align-items:center;
-  justify-items:center;
-  margin-bottom:10px;
-}
-.game-container img{
-  width:40px;
-  
-}
+
 .time-of-game{
   margin:auto;
   background-color:mintcream;
@@ -97,4 +130,7 @@ li::marker{
   border-radius:5px;
   border:1px solid grey;
   box-shadow:0 0 2px #333333;
+}
+.no-game{
+  color:red;
 }
