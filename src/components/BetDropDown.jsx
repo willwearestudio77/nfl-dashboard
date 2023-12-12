@@ -7,7 +7,18 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useContext, useEffect, useState } from 'react'
 import { NewDatesContext } from '../contexts/Context'
 import { List, ListItem, ListItemText } from '@mui/material';
+import { nanoid } from 'nanoid';
 
+const betId = nanoid();
+const getColorClass = (value) => {
+  if (value > 2) {
+    return 'green-background';
+  } else if (value > 1 && value <= 2) {
+    return 'yellow-background';
+  } else {
+    return 'red-background';
+  }
+};
 
 export default function BetAccordion({ gameKey }) {
   const { idValue, betData } = useContext(NewDatesContext);
@@ -32,14 +43,15 @@ export default function BetAccordion({ gameKey }) {
           {firstOne.map((bet) => {
             const valuesArray =  bet.values
             
-            return(<List >
+            
+            return(<List key={bet.id} >
             <ListItem key={bet.id}>
               <ListItemText
                 primary={bet.name}
               />
               <List>
               {valuesArray.map(value =>(
-                 <ListItem  key={value.value}><strong>{value.value}</strong><span>{value.odd}</span></ListItem>
+                 <ListItem className={getColorClass(value.value)}  key={nanoid()}><strong>{value.value}</strong><span>{value.odd}</span></ListItem>
                  
               ))}
               </List>
@@ -68,10 +80,6 @@ export default function BetAccordion({ gameKey }) {
         </AccordionSummary>
         <AccordionDetails>
           {content}
-          {/* <List >
-            {content}
-           
-          </List> */}
         </AccordionDetails>
       </Accordion>
     </div>

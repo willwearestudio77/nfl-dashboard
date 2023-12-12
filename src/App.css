@@ -95,7 +95,17 @@ justify-content:space-evenly;
   font-size:25px;
   padding:20px;
 }
+.green-background {
+  background: green !important;
+}
 
+.yellow-background {
+  background: yellow !important;
+}
+
+.red-background {
+  background: red !important;
+}
 
 li::marker{
   display:none;
