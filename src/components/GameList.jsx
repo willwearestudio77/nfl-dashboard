@@ -1,7 +1,5 @@
 import { useContext } from 'react'
 import { NewDatesContext } from '../contexts/Context'
-import Loading from './Loading'
-import { Suspense } from 'react'
 import BetAccordion from './BetDropDown'
 
 
@@ -14,15 +12,15 @@ function GameList() {
         <>
 
             <ul className="games-list">
-
+            
                 {games.map(gameObject => (
                     <li key={gameObject.game.id}>
                         <div className="teams">
                             <div className="home-team" >
-                                <Suspense fallback={<Loading />}>
+                                
 
                                     <img src={gameObject.teams.home.logo} />
-                                </Suspense>
+                                
 
                                 <p>{gameObject.teams.home.name}</p>
                                 <span>{gameObject.scores.home.total}</span>
@@ -46,6 +44,7 @@ function GameList() {
                     </li>
 
                 ))}
+                
 
             </ul>
 

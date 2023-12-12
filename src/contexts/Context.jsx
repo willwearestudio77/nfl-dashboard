@@ -1,4 +1,5 @@
 import React, { createContext, useState, useCallback, useEffect } from "react";
+import dayjs from "dayjs";
 
 
 export const NewDatesContext = createContext({
@@ -13,12 +14,18 @@ export const NewDatesContext = createContext({
 });
 
 export const NewDatesProvider = ({ children }) => {
+  
+  
+  const todaysDate = dayjs();
+  const formattedDate = todaysDate.format("YYYY-MM-DD")
+  const formattedYear = todaysDate.format("YYYY")
 
-  const [dates, setDates] = useState('');
-  const [years, setYears] = useState('');
+
+  const [dates, setDates] = useState(``);
+  const [years, setYears] = useState(``);
   const [games, setGames] = useState([]);
   const [gameid, setgameId] = useState('');
-  const [URL, setURL] = useState('');
+  const [URL, setURL] = useState(`https://api-american-football.p.rapidapi.com/games?date=${formattedDate}&league=1&season=${formattedYear}&timezone=America%2FNew_York`);
   const [betURL,setBetURL]= useState('');
   const [betData,setBetData]= useState([]);
   const [bookmakers,setBookmakers] = useState([]);
@@ -41,29 +48,7 @@ export const NewDatesProvider = ({ children }) => {
 
 
 
-  // const dateValue = useCallback(async (data) => {
-  //   try {
-  //       // Set Dates and Years
-  //       setDates(data.format("YYYY-MM-DD"));
-  //       console.log(dates)
-  //       setYears(data.format('YYYY'));
-  //       console.log(years)
-  //       const updateURL = `https://api-american-football.p.rapidapi.com/games?date=${dates}&league=1&season=${years}&timezone=America%2FNew_York`;
-  //       setURL(updateURL)
-  //       console.log(updateURL)
-  //       // Make API call
-  //       const resp = await fetch(URL, options);
-  //       if (!resp.ok) throw new Error("Failed to fetch");
 
-  //       // Get and set games data
-  //       const gamesData = await resp.json();
-  //       console.log(gamesData)
-  //       setGames(gamesData.response);
-  //       console.log(games)
-  //   } catch (error) {
-  //       console.error(error);
-  //   }
-  // });
   const dateValue = useCallback(async (data) => {
     try {
       const formattedDate = data.format("YYYY-MM-DD");
