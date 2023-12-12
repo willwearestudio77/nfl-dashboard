@@ -39,7 +39,7 @@ body{
 .games-list{
   
   right:0;
-  padding:25px;
+  padding:0px;
 }
 .home-team span,.away-team span{
   font-size:20px;
@@ -58,7 +58,7 @@ body{
 .games-list li{
 background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(243,243,243,1) 52%, rgba(230,230,230,1) 100%);
 border-radius:20px;
-padding:20px;
+padding:10px;
 margin:0;
 text-align: center;
 box-shadow:0 0 10px ghostwhite;
@@ -95,6 +95,8 @@ justify-content:space-evenly;
   font-size:25px;
   padding:20px;
 }
+
+
 li::marker{
   display:none;
   color:transparent;

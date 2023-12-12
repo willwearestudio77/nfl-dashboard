@@ -39,7 +39,7 @@ export default function BetAccordion({ gameKey }) {
               />
               <List>
               {valuesArray.map(value =>(
-                 <ListItem key={value.value}>{value.value}{value.odd}</ListItem>
+                 <ListItem  key={value.value}><strong>{value.value}</strong><span>{value.odd}</span></ListItem>
                  
               ))}
               </List>
