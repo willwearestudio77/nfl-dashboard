@@ -5,11 +5,10 @@
   text-align: center;
 }
 .MuiContainer-root{
-  background-image:url("./assets/background.jpg");
-  background-position:center center;
-  background-size:contain;
+  background: rgb(2,0,36);
+background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 50%, rgba(0,212,255,1) 100%);
   min-height:100vh;
-  padding:0;
+  padding:0 !important;
 }
 .MuiInputBase-root{
   background-color:white;
@@ -25,13 +24,14 @@ body{
   min-height:100vh;
 }
 .dashboard-header{
-  background-color:#333333;
+  background-color:whitesmoke;
   margin:0px;
+  border-radius:0px 0px 10px 10px;
 }
 
 .dashboard-header h1{
   text-align:center;
-  color:white;
+  color:#333333;
   margin:0px;
   padding:10px;
   box-shadow:0px 2px 6px #333333;
@@ -39,7 +39,7 @@ body{
 .games-list{
   
   right:0;
-  padding:0px;
+  padding:20px;
 }
 .home-team span,.away-team span{
   font-size:20px;
@@ -88,7 +88,12 @@ justify-content:space-evenly;
 .away-team img{
   width:50px;
 }
-
+label.MuiFormLabel-root{
+  color:blueviolet;
+  background-color:white;
+  border-radius:10px;
+  padding:2px;
+}
 .date-time p{
   color:black;
   text-align: center;
@@ -96,15 +101,15 @@ justify-content:space-evenly;
   padding:20px;
 }
 .green-background {
-  background: green !important;
+  background: rgb(127, 169, 127) !important;
 }
 
 .yellow-background {
-  background: yellow !important;
+  background: rgb(255, 255, 146) !important;
 }
 
 .red-background {
-  background: red !important;
+  background: rgb(255, 180, 180) !important;
 }
 
 li::marker{

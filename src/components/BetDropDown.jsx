@@ -51,7 +51,7 @@ export default function BetAccordion({ gameKey }) {
               />
               <List>
               {valuesArray.map(value =>(
-                 <ListItem className={getColorClass(value.value)}  key={nanoid()}><strong>{value.value}</strong><span>{value.odd}</span></ListItem>
+                 <ListItem className={getColorClass(value.odd)}  key={nanoid()}><strong>{value.value}</strong><span>{value.odd}</span></ListItem>
                  
               ))}
               </List>
